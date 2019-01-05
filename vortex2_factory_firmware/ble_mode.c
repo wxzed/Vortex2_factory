@@ -8,11 +8,15 @@
 #include "ble_nus.h"
 #include "bsp_btn_ble.h"
 
+#include "nrf_sdh.h"
 #include "nrf_sdh_ble.h"
 #include "nrf_ble_gatt.h"
 #include "nrf_sdh_freertos.h"
 #include "app_timer.h"
 #include "nrf_log.h"
+#include "motor_mode.h"
+#include "ble_control_mode.h"
+#include "myqueue.h"
 
 #define APP_BLE_CONN_CFG_TAG            1                                           /**< A tag identifying the SoftDevice BLE configuration. */
 
@@ -37,7 +41,27 @@
 
 BLE_NUS_DEF(m_nus, NRF_SDH_BLE_TOTAL_LINK_COUNT);                                   
 NRF_BLE_GATT_DEF(m_gatt);
-BLE_ADVERTISING_DEF(m_advertising);                                            
+BLE_ADVERTISING_DEF(m_advertising); 
+#define ble_link  NRF_GPIO_PIN_MAP(0,12)
+
+bool ble_status = ble_disconnect;
+
+static void ble_link_init()
+{
+  nrf_gpio_cfg_output(ble_link);
+  nrf_gpio_pin_clear(ble_link);
+}
+
+static void ble_link_on()
+{
+  
+  nrf_gpio_pin_set(ble_link);
+}
+
+static void ble_link_off()
+{
+  nrf_gpio_pin_clear(ble_link);
+}
 
 static uint16_t   m_conn_handle          = BLE_CONN_HANDLE_INVALID;                 /**< Handle of the current connection. */
 static uint16_t   m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT - 3;            /**< Maximum length of data (in bytes) that can be transmitted to the peer by the Nordic UART service module. */
@@ -76,6 +100,7 @@ static void nus_data_handler(ble_nus_evt_t * p_evt)
 
     if (p_evt->type == BLE_NUS_EVT_RX_DATA)
     {
+        cuappEnqueue(p_evt->params.rx_data.p_data, p_evt->params.rx_data.length);
     /*
         bsp_board_led_invert(LED_BLE_NUS_RX);
         NRF_LOG_DEBUG("Received data from BLE NUS. Writing data on CDC ACM.");
@@ -155,15 +180,10 @@ static void advertising_start(void * p_context)
     APP_ERROR_CHECK(err_code);
 }
 
-/**
- * @brief Function for handling advertising events.
- *
- * @details This function is called for advertising events which are passed to the application.
- *
- * @param[in] ble_adv_evt  Advertising event.
- */
+
 static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
 {
+    NRF_LOG_INFO("%s",__FUNCTION__);
     uint32_t err_code;
 
     switch (ble_adv_evt)
@@ -180,25 +200,26 @@ static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
 }
 
 
-/**
- * @brief Function for handling BLE events.
- *
- * @param[in]   p_ble_evt   Bluetooth stack event.
- * @param[in]   p_context   Unused.
- */
 static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
 {
+    NRF_LOG_INFO("%s",__FUNCTION__);
     uint32_t err_code;
 
     switch (p_ble_evt->header.evt_id)
     {
         case BLE_GAP_EVT_CONNECTED:
             NRF_LOG_INFO("BLE NUS connected");
+            ble_link_on();
+            //run_mode = control_mode;
+            ble_status = ble_connected;
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
             break;
 
         case BLE_GAP_EVT_DISCONNECTED:
             NRF_LOG_INFO("BLE NUS disconnected");
+            run_mode = board_mode;
+            ble_status = ble_disconnect;
+            ble_link_off();
             // LED indication will be changed when advertising starts.
             m_conn_handle = BLE_CONN_HANDLE_INVALID;
             break;
@@ -321,6 +342,7 @@ static void ble_stack_init(void)
 /** @brief Function for handling events from the GATT library. */
 void gatt_evt_handler(nrf_ble_gatt_t * p_gatt, nrf_ble_gatt_evt_t const * p_evt)
 {
+    NRF_LOG_INFO("%s",__FUNCTION__);
     if ((m_conn_handle == p_evt->conn_handle) && (p_evt->evt_id == NRF_BLE_GATT_EVT_ATT_MTU_UPDATED))
     {
         m_ble_nus_max_data_len = p_evt->params.att_mtu_effective - OPCODE_LENGTH - HANDLE_LENGTH;
@@ -352,11 +374,12 @@ void gatt_init(void)
  */
 void bsp_event_handler(bsp_event_t event)
 {
+    NRF_LOG_INFO("%s",__FUNCTION__);
     uint32_t err_code;
     switch (event)
     {
         case BSP_EVENT_SLEEP:
-            sleep_mode_enter();
+            //sleep_mode_enter();
             break;
 
         case BSP_EVENT_DISCONNECT:
@@ -382,6 +405,14 @@ void bsp_event_handler(bsp_event_t event)
             break;
     }
 }
+
+
+void send_ble_data(uint8_t *data,uint16_t len){
+  uint16_t length = (uint16_t)len; 
+  ble_nus_data_send(&m_nus, data, &length, m_conn_handle);
+}
+
+
 
 /** @brief Function for initializing the Advertising functionality. */
 static void advertising_init(void)
@@ -413,6 +444,7 @@ static void advertising_init(void)
 
 void ble_freertos_init()
 {
+    ble_link_init();
     ble_stack_init();
     gap_params_init();
     gatt_init();
@@ -420,4 +452,5 @@ void ble_freertos_init()
     advertising_init();
     conn_params_init();
     nrf_sdh_freertos_init(advertising_start, NULL);
+    blec_freertos_init();
 }

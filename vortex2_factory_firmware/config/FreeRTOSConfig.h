@@ -61,10 +61,10 @@
 #define configUSE_TICKLESS_IDLE_SIMPLE_DEBUG                                      1 /* See into vPortSuppressTicksAndSleep source code for explanation */
 #define configCPU_CLOCK_HZ                                                        ( SystemCoreClock )
 #define configTICK_RATE_HZ                                                        1024
-#define configMAX_PRIORITIES                                                      ( 3 )
+#define configMAX_PRIORITIES                                                      ( 6 )
 #define configMINIMAL_STACK_SIZE                                                  ( 60 )
-#define configTOTAL_HEAP_SIZE 8192
-#define configMAX_TASK_NAME_LEN                                                   ( 4 )
+#define configTOTAL_HEAP_SIZE 10240
+#define configMAX_TASK_NAME_LEN                                                   ( 8 )
 #define configUSE_16_BIT_TICKS                                                    0
 #define configIDLE_SHOULD_YIELD                                                   1
 #define configUSE_MUTEXES                                                         1

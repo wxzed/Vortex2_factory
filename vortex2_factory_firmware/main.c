@@ -91,6 +91,11 @@
 #include "none_mode.h"
 #include "ultrasonic_mode.h"
 #include "usb_cdc_mode.h"
+#include "rgb_mode_timer.h"
+#include "neopixel_mode.h"
+#include "light_mode.h"
+#include "mode_global.h"
+#include "vortex2_jump.h"
 
 #define LOGGER_STACK_SIZE 512
 
@@ -99,11 +104,14 @@
 
 #define LED_BLINK_INTERVAL 800
 
-#define BIT0  NRF_GPIO_PIN_MAP(1,10)
-#define BIT1  NRF_GPIO_PIN_MAP(1,11)
-#define BIT2  NRF_GPIO_PIN_MAP(1,12)
-#define BIT3  NRF_GPIO_PIN_MAP(1,13)
+#define BIT0  NRF_GPIO_PIN_MAP(1,06)
+#define BIT1  NRF_GPIO_PIN_MAP(1,04)
+#define BIT2  NRF_GPIO_PIN_MAP(1,02)
+#define BIT3  NRF_GPIO_PIN_MAP(1,00)
 static uint8_t modeValue = 0;
+uint8_t nowBoard = 0x0F;
+bool beginRGBtimer = true;
+bool run_mode  = board_mode;
 
 APP_TIMER_DEF(m_blink_ble);
 APP_TIMER_DEF(m_blink_cdc);
@@ -137,11 +145,9 @@ static void log_init(void)
 static void logger_thread(void * arg)
 {
     UNUSED_PARAMETER(arg);
-
     while (1)
     {
         NRF_LOG_FLUSH();
-
         vTaskSuspend(NULL); // Suspend myself
     }
 }
@@ -149,6 +155,9 @@ static void logger_thread(void * arg)
 
 void vApplicationIdleHook( void )
 {
+    //NRF_LOG_INFO("vApplicationIdleHook");
+    //vTaskResume();
+    //vTaskResume(m_embedded_thread);
 #if NRF_LOG_ENABLED
      vTaskResume(m_logger_thread);
 #endif
@@ -185,42 +194,63 @@ static void checkMode(){
 
 static void switchModule(){
   checkMode();
+  nowBoard = modeValue;
   switch(modeValue){
-      case 0x0:
-        emoticon_freertos_init();
+      case emoticonCode:
+        emoticon_freertos_init(); /*line of inspection RGB is blue*/    
+        //light_freertos_init();
         break;
-      case 0x01:
-        ultrasonic_freertos_init();
+      case lightCode:
+        light_freertos_init();
         break;
       case 0x02:
-        color_freertos_init();
+        //light_freertos_init();
+        //color_freertos_init();      
         break;
       case 0x03:
+        //emoticon_freertos_init(); /*line of inspection RGB is blue*/
+        break;
+      case colorCode:
+        color_freertos_init();  /*RGB is color*/
+        break;
+      case nfcCode:
         nfc_freertos_init();
         break;
+      case ultrasonicCode:
+        ultrasonic_freertos_init();  /*RGB is red breath*/
+        break;
       default:
-        none_freertos_init();
+        beginRGBtimer = false;
+        none_freertos_init(); /*RGB is white breath*/
+        
         break;
   }
 }
 
 int main(void)
 {
+  
     ret_code_t ret;
     log_init();
     ret = nrf_drv_power_init(NULL);
     APP_ERROR_CHECK(ret);
     ret = nrf_drv_clock_init();
     APP_ERROR_CHECK(ret);
+    
     log_freertos_init();
-
+    
     switchModule();
     init_check_mode_timer();
+    init_rgb_mode_timer();
+    
     usb_cdc_freertos_init();
+    
     ble_freertos_init();
-    embedded_freertos_init();
-
+    
+    embedded_freertos_init(); /*buzzer spi_flash*/    
+    neopixel_freertos_init(); /*RGB*/
     //SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
+    //vortex2_app_start(0xAB000);
     vTaskStartScheduler();
 
     for (;;)

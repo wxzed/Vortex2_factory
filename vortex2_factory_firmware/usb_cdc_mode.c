@@ -4,6 +4,7 @@
 #include "app_usbd_string_desc.h"
 #include "app_usbd_cdc_acm.h"
 #include "nrf_log.h"
+#include "nrf_delay.h"
 
 #define USB_CDC_DATA_LEN  128
 #define USBD_STACK_SIZE   256
@@ -148,6 +149,7 @@ static void usbd_thread(void * arg)
         while (app_usbd_event_queue_process())
         {
         }
+
     }
 }
 

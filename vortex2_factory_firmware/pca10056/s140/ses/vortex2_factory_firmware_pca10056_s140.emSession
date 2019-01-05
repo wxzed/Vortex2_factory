@@ -2,6 +2,8 @@
 <session>
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <BreakpointListItem trigger="" line="511" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="../../../../../../components/softdevice/s140/headers/nrf_soc.h" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="12525" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="Output/Release/Exe/vortex2_factory_firmware_pca10056_s140.map" useHWbreakpoint="false"/>
   <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
@@ -9,7 +11,7 @@
   <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
  </FrameBufferWindow>
  <Memory1>
-  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" addressOrder="0" columnsText="" refreshPeriod="0" name="vortex2_factory_firmware_pca10056_s140" radix="16" sizeText="" addressText="0x2A000"/>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" addressOrder="0" columnsText="" refreshPeriod="0" name="vortex2_factory_firmware_pca10056_s140" radix="16" sizeText="" addressText="0x58533"/>
  </Memory1>
  <Memory2>
   <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" addressOrder="0" columnsText="" refreshPeriod="0" name="vortex2_factory_firmware_pca10056_s140" radix="16" sizeText="" addressText=""/>
@@ -24,12 +26,7 @@
   <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140"/>
   <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140"/>
   <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140;Application"/>
-  <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140;Board Support"/>
   <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140;New Mode"/>
-  <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140;nRF_BLE"/>
-  <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140;nRF_Drivers"/>
-  <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140;nRF_Libraries"/>
-  <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140;nRF_SoftDevice"/>
   <ProjectSessionItem path="vortex2_factory_firmware_pca10056_s140;vortex2_factory_firmware_pca10056_s140;Third Parties"/>
  </Project>
  <Register1>
@@ -60,41 +57,44 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="27" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/source/include/projdefs.h" debugPath="../../../../../../external/freertos/source/include/projdefs.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="66" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../integration/nrfx/legacy/nrf_drv_power.c" debugPath="../../../../../../integration/nrfx/legacy/nrf_drv_power.c" selected="0" top="49" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="76" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/softdevice/s140/headers/nrf_error.h" debugPath="../../../../../../components/softdevice/s140/headers/nrf_error.h" selected="0" top="58" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="31" y="62" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/softdevice/common/nrf_sdh_freertos.c" debugPath="../../../../../../components/softdevice/common/nrf_sdh_freertos.c" selected="0" top="33" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1631" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/source/tasks.c" debugPath="../../../../../../external/freertos/source/tasks.c" selected="0" top="1613" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="70" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/source/portable/MemMang/heap_1.c" debugPath="../../../../../../external/freertos/source/portable/MemMang/heap_1.c" selected="0" top="52" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="62" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/source/list.c" debugPath="../../../../../../external/freertos/source/list.c" selected="0" top="44" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="119" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/portable/CMSIS/nrf52/port_cmsis.c" debugPath="../../../../../../external/freertos/portable/CMSIS/nrf52/port_cmsis.c" selected="0" top="101" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="237" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/source/timers.c" debugPath="../../../../../../external/freertos/source/timers.c" selected="0" top="205" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="20" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/portable/GCC/nrf52/port.c" debugPath="../../../../../../external/freertos/portable/GCC/nrf52/port.c" selected="0" top="3" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="40" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/ble/common/ble_conn_params.c" debugPath="../../../../../../components/ble/common/ble_conn_params.c" selected="0" top="23" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="464" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/bsp/bsp.c" debugPath="../../../../../../components/libraries/bsp/bsp.c" selected="0" top="449" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="116" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/timer/app_timer_freertos.c" debugPath="../../../../../../components/libraries/timer/app_timer_freertos.c" selected="0" top="99" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="64" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/portable/CMSIS/nrf52/portmacro_cmsis.h" debugPath="../../../../../../external/freertos/portable/CMSIS/nrf52/portmacro_cmsis.h" selected="0" top="47" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="7488" useTextEdit="1" useBinaryEdit="0" left="0" path="../config/sdk_config.h" debugPath="../config/sdk_config.h" selected="0" top="7481" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="53" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/softdevice/common/nrf_sdh_freertos.h" debugPath="../../../../../../components/softdevice/common/nrf_sdh_freertos.h" selected="0" top="36" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="200" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../config/FreeRTOSConfig.h" debugPath="../../../config/FreeRTOSConfig.h" selected="0" top="189" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="253" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/portable/CMSIS/nrf52/port_cmsis_systick.c" debugPath="../../../../../../external/freertos/portable/CMSIS/nrf52/port_cmsis_systick.c" selected="0" top="240" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="693" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/ble/ble_advertising/ble_advertising.c" debugPath="../../../../../../components/ble/ble_advertising/ble_advertising.c" selected="0" top="684" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="80" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/log/nrf_log_ctrl.h" debugPath="../../../../../../components/libraries/log/nrf_log_ctrl.h" selected="0" top="66" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="362" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/softdevice/common/nrf_sdh.c" debugPath="../../../../../../components/softdevice/common/nrf_sdh.c" selected="0" top="344" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1166" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/hal/nrf_usbd.h" debugPath="../../../../../../modules/nrfx/hal/nrf_usbd.h" selected="0" top="1160" codecName=""/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="10" y="29" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../embedded_mode.c" debugPath="../../../embedded_mode.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="18" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../none_mode.c" debugPath="../../../none_mode.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nfc_mode.c" debugPath="../../../nfc_mode.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="73" y="19" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../usb_cdc_mode.c" debugPath="../../../usb_cdc_mode.c" selected="0" top="87" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="47" y="16" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../ble_mode.c" debugPath="../../../ble_mode.c" selected="0" top="9" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="7" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../ble_mode.h" debugPath="../../../ble_mode.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="10" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../usb_cdc_mode.h" debugPath="../../../usb_cdc_mode.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="112" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/log/nrf_log.h" debugPath="../../../../../../components/libraries/log/nrf_log.h" selected="0" top="103" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="36" y="81" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/ble/ble_advertising/ble_advertising.h" debugPath="../../../../../../components/ble/ble_advertising/ble_advertising.h" selected="0" top="65" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="99" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error_weak.c" debugPath="../../../../../../components/libraries/util/app_error_weak.c" selected="0" top="0" codecName=""/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="31" y="212" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" debugPath="../../../main.c" selected="1" top="200" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="3" y="110" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/timer/app_timer.h" debugPath="../../../../../../components/libraries/timer/app_timer.h" selected="0" top="96" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="58" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../check_mode_timer.c" debugPath="../../../check_mode_timer.c" selected="0" top="39" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="21" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../buzzer_mode.h" debugPath="../../../buzzer_mode.h" selected="0" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="245" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../ble_control_mode.c" debugPath="../../../ble_control_mode.c" selected="0" top="231" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="21" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../myqueue.c" debugPath="../../../myqueue.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="411" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../ble_mode.c" debugPath="../../../ble_mode.c" selected="0" top="390" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="212" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" debugPath="../../../main.c" selected="0" top="200" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="16" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../myqueue.h" debugPath="../../../myqueue.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="83" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../motor_mode.c" debugPath="../../../motor_mode.c" selected="0" top="60" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="61" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../embedded_mode.c" debugPath="../../../embedded_mode.c" selected="0" top="56" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="191" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../emoticon_mode.c" debugPath="../../../emoticon_mode.c" selected="0" top="172" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="4" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../motor_mode.h" debugPath="../../../motor_mode.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="23" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../light_mode.c" debugPath="../../../light_mode.c" selected="0" top="3" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="162" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../color_mode.c" debugPath="../../../color_mode.c" selected="0" top="138" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="101" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error_weak.c" debugPath="../../../../../../components/libraries/util/app_error_weak.c" selected="0" top="86" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="33" y="44" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../mode_global.h" debugPath="../../../mode_global.h" selected="1" top="25" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="22" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../buzzer_mode.c" debugPath="../../../buzzer_mode.c" selected="0" top="90" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="23" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../check_mode_timer.c" debugPath="../../../check_mode_timer.c" selected="0" top="23" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="68" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../ultrasonic_mode.c" debugPath="../../../ultrasonic_mode.c" selected="0" top="50" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="27" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../none_mode.c" debugPath="../../../none_mode.c" selected="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="13" y="33" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../neopixel_mode.c" debugPath="../../../neopixel_mode.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../ble_control_mode.h" debugPath="../../../ble_control_mode.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="8" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../ble_mode.h" debugPath="../../../ble_mode.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="250" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../spi_flash_mode.c" debugPath="../../../spi_flash_mode.c" selected="0" top="188" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="97" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/hal/nrf_gpio.h" debugPath="../../../../../../modules/nrfx/hal/nrf_gpio.h" selected="0" top="83" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="24" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nfc_mode.c" debugPath="../../../nfc_mode.c" selected="0" top="6" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="8" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../vortex2_flash.c" debugPath="../../../vortex2_flash.c" selected="0" top="6" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../config/sdk_config.h" debugPath="../config/sdk_config.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="13" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../vortex2_flash.h" debugPath="../../../vortex2_flash.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="36" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../spi_flash_mode.h" debugPath="../../../spi_flash_mode.h" selected="0" top="21" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="13" y="243" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/portable/CMSIS/nrf52/port_cmsis_systick.c" debugPath="../../../../../../external/freertos/portable/CMSIS/nrf52/port_cmsis_systick.c" selected="0" top="240" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../rgb_mode_timer.c" debugPath="../../../rgb_mode_timer.c" selected="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="38" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../neopixel_mode.h" debugPath="../../../neopixel_mode.h" selected="0" top="4" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="21" useTextEdit="1" useBinaryEdit="0" left="0" path="C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 3.34b/include/stdint.h" debugPath="C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 3.34b/include/stdint.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="40" y="69" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../vortex2_jump.c" debugPath="../../../vortex2_jump.c" selected="0" top="68" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="286" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../integration/nrfx/legacy/nrf_drv_power.c" debugPath="../../../../../../integration/nrfx/legacy/nrf_drv_power.c" selected="0" top="267" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="5035" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../external/freertos/source/tasks.c" debugPath="../../../../../../external/freertos/source/tasks.c" selected="0" top="5019" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="355" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/softdevice/s140/headers/nrf_sdm.h" debugPath="../../../../../../components/softdevice/s140/headers/nrf_sdm.h" selected="0" top="337" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1789" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/toolchain/cmsis/include/core_cm4.h" debugPath="../../../../../../components/toolchain/cmsis/include/core_cm4.h" selected="0" top="1770" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/hal/nrf_nvmc.c" debugPath="../../../../../../modules/nrfx/hal/nrf_nvmc.c" selected="0" top="42" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="vortex2_factory_firmware_pca10056_s140" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="D:/nrf52840/nRF5_SDK_15.2.0_9412b96/examples/peripheral/vortex2_factory_firmware" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="vortex2_factory_firmware_pca10056_s140" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="D:/nrf52840/nRF5_SDK_15.2.0_9412b96/modules/nrfx/hal" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

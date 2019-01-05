@@ -4,10 +4,10 @@
 #include "mode_global.h"
 #include "nrf_log.h"
 
-#define BIT0  NRF_GPIO_PIN_MAP(1,10)
-#define BIT1  NRF_GPIO_PIN_MAP(1,11)
-#define BIT2  NRF_GPIO_PIN_MAP(1,12)
-#define BIT3  NRF_GPIO_PIN_MAP(1,13)
+#define BIT0  NRF_GPIO_PIN_MAP(1,06)
+#define BIT1  NRF_GPIO_PIN_MAP(1,04)
+#define BIT2  NRF_GPIO_PIN_MAP(1,02)
+#define BIT3  NRF_GPIO_PIN_MAP(1,00)
 
 
 #define TIMER_PERIOD      1000

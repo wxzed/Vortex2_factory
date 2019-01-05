@@ -1,6 +1,8 @@
+/*use uart*/
 #include "nfc_mode.h"
 #include "mode_global.h"
 #include "pca10056.h"
+#include "nrf_log.h"
 
 #define NFC_STACK_SIZE   256
 #define NFC_PRIORITY   2
@@ -17,7 +19,8 @@ static void blink()
 
 static void nfc_thread(void * arg)
 {
-  
+  NRF_LOG_INFO("%s",__FUNCTION__);
+  UNUSED_PARAMETER(arg);
   ret_code_t ret;
   nrf_gpio_cfg_output(LED_3);
   for(;;){
